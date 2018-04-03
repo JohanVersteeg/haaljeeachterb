@@ -1,0 +1,426 @@
+<html>
+
+<head>
+	<title>Verkeersschool Ruark van Dijken</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-31212916-4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-31212916-4');
+	</script>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" id="viewport">
+	<meta name="description" content="Verkeersschool in omgeving Utrecht, Gorinchem en Tiel" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	 crossorigin="anonymous"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	 crossorigin="anonymous" async defer></script>
+	<script src="script.js" async defer></script>
+
+	<link rel="icon" href="image_resources/favicon.png">
+	<meta name="theme-color" content="#207ca7">
+	<script>
+		if (screen.width < 400) {
+			var mvp = document.getElementById('viewport');
+			mvp.setAttribute('content', 'width=370');
+		}
+	</script>
+</head>
+
+<body>
+	<header data-anchor="0">
+		<nav class="navbar navbar-fixed-top topbar">
+			<div class="container">
+				<div class="brand">
+					<span class="lesIcon">L</span>
+					<span class="text">RUARK van DIJKEN</span>
+				</div>
+				<div class="menu hidden-xs hidden-sm">
+					<div class="items">
+						<button class="menu-item" data-menu-item="0" onclick="window.scrollTo(0)">Welkom</button>
+						<button class="menu-item" data-menu-item="1" onclick="window.scrollTo(1)">Pakketten & Tarieven</button>
+						<button class="menu-item" data-menu-item="2" onclick="window.scrollTo(2)">Over ons</button>
+						<button class="menu-item" data-menu-item="3" onclick="window.scrollTo(3)">Contact</button>
+					</div>
+					<div class="line">
+					</div>
+				</div>
+			</div>
+			<div class="collapsed-menu dropdown hidden-md hidden-lg">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-menu-hamburger"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="javascript: scrollTo(0)">Welkom</a>
+					</li>
+					<li>
+						<a href="javascript: scrollTo(1)">Pakketten & Tarieven</a>
+					</li>
+					<li>
+						<a href="javascript: scrollTo(2)">Over
+							<ons></ons>
+						</a>
+					</li>
+					<li>
+						<a href="javascript: scrollTo(3)">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<a href="https://www.facebook.com/verkeersschoolruarkvandijken/" class="facebook pull-right">
+				<img src="image_resources/facebook.png" width="100%" />
+			</a>
+
+		</nav>
+	</header>
+
+	<section class="cover-picture " id='welkom'>
+		<div class="image "></div>
+		<div class="container ">
+			<div class="call-me-box ">
+				<h2>Bel me terug</h2>
+				<input type="text " class="form-control " placeholder="Jouw telefoonnummer" id='phoneNumberToSend' />
+				<button class="btn btn-primary pull-right " onclick="sendPhone(event)">Verzenden</button>
+				<span class="label label-success pull-right" id='phoneSend'>
+					<i class="fa fa-check" aria-hidden="true"></i> Verzonden.</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="actions" id='hightlights'>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-6">
+					<img src="image_resources/actie.png" />
+					<div class="action-text">
+						<h2>Gratis proefles</h2>
+						<p>Wil je een keer proberen hoe het is om een autorijles te krijgen? Vraag dan nu de gratis proefles aan!
+							<a class="light-link" href="javascript: intresseIn('Proefles')">Aanvragen</a>
+						</p>
+					</div>
+				</div>
+				<div class="hidden-md hidden-lg" style="height: 60px;">
+
+				</div>
+				<div class="col-md-6">
+					<img src="image_resources/caravan.png" />
+					<div class="action-text">
+						<h2>Caravan-training</h2>
+						<p>Geen aanhanger-rijbewijs halen maar wel vertrouwd met een caravan de weg op? Dan is de carvan-training iets voor jou.
+							<a href="javascript: toggleCaravanTrainig(event)" class="light-link">Meer informatie</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row" style="display: none; margin-top: 29px; background: rgba(255, 255, 255, 0.08); padding: 20px;" id="caravan-training-more-info">
+				<p>Wil je graag met een caravan of aanhanger rijden, maar heb je nog nooit je E achter B rijbewijs gehaald of kan je wel
+					een opfrisser gebruiken? Ook dit is mogelijk bij verkeersschool Ruark van Dijken! Dit kan zowel met eigen caravan/aanhanger
+					en auto, maar ook met een combinatie (auto en aanhanger) van de rijschool.</p>
+				<p>Bij deze begeleiding ga ik je leren om de combinatie onder controle te krijgen en te houden. Ik leer je netjes en veilig
+					door het verkeer heen te rijden en achteruit te manoeuvreren. In mijn begeleiding zal ik speciale aandacht geven aan
+					de punten waarvan uzelf merkt dat dit soms lastiger voor u is.</p>
+				<p>Deze BE-begeleiding kan geboekt worden voor minimaal 2 uur (opfrissen) tot maximaal het aantal uur dat u nodig heeft
+					om uw BE-rijbewijs te behalen. </p>
+
+				<p>
+					<b>Prijzen:</b>
+				</p>
+
+				<p>Met jouw eigen combinatie:
+					<br /> Starttarief: €60,- (inclusief 2 uur les)
+					<br /> Per extra uur: €30,-</p>
+
+				<p>Met de combinatie van de rijschool:
+					<br /> Starttarief €100,- (inclusief 2 uur les)
+					<br /> Per extra uur: €50,-</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="packages" id='pakketten' data-anchor="1">
+		<div class="container ">
+			<div class="row ">
+				<div class="col-sm-6 col-md-4">
+					<div class="package-box">
+						<header>
+							Auto
+							<h4>Rijbewijs B</h4>
+						</header>
+						<div class="standard ">
+							<span class="price ">&euro;1468,95</span>
+							<ul class="lines ">
+								<li>30 klokuren les</li>
+								<li>1 praktijkexamen
+									<a href="https://www.youtube.com/watch?v=ojccsfrIxoU" target="_blank" style='float:right'>
+										<i class="fa fa-youtube" style="margin-top: -2px; font-size: 1.5em;" aria-hidden="true"></i>
+									</a>
+								</li>
+							</ul>
+							<div class="button-box text-center">
+								<a href="javascript: intresseIn('Pakket Auto')" class="dark-link">Aanvragen</a>
+							</div>
+						</div>
+						<header class="deluxe-header">Deluxe
+							<span class='costs'>+ &euro;400</span>
+						</header>
+						<div class="standaard deluxe">
+							<ul class="lines ">
+								<li>10 extra klokuren les</li>
+							</ul>
+							<div class="button-box text-center">
+								<a href="javascript: intresseIn('Pakket Auto Deluxe')" class="dark-link">Aanvragen</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4">
+					<div class="package-box ">
+						<header>
+							Aanhanger
+							<h4>Rijbewijs E achter B</h4>
+						</header>
+						<div class="standard">
+							<span class="price ">&euro;430,-</span>
+							<ul class="lines ">
+								<li>4 klokuren les</li>
+								<li>1 praktijkexamen</li>
+							</ul>
+							<div class="button-box text-center">
+								<a href="javascript: intresseIn('Pakket Aanhanger')" class="dark-link">Aanvragen</a>
+							</div>
+						</div>
+						<header class="deluxe-header">Deluxe
+							<span class='costs'>+ &euro;120</span>
+						</header>
+						<div class="standaard deluxe">
+							<ul class="lines ">
+								<li>3 extra klokuren les</li>
+							</ul>
+							<div class="button-box text-center">
+								<a href="javascript: intresseIn('Pakket Aanhanger Deluxe')" class="dark-link">Aanvragen</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-0">
+					<div class="package-box ">
+						<header>
+							Spoedcursus
+							<h4>Rijbewijs B</h2>
+						</header>
+
+						<div class="standard">
+							<span class="price ">&euro;2068,-</span>
+							<ul class="lines ">
+								<li>35 klokuren les</li>
+								<li>1 praktijkexamen</li>
+							</ul>
+							<div class="button-box text-center">
+								<a href="javascript: intresseIn('Pakket Spoedcursus')" class="dark-link">Aanvragen</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-12">
+					<table class="hidden-sm hidden-xs">
+						<thead>
+							<tr>
+								<th colspan="4">Losse tarieven</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Losse les (per klokuur)</th>
+								<td>€ 45,00</td>
+
+								<th>Herexamen</th>
+								<td> € 229,00</td>
+							</tr>
+							<tr>
+								<th>Tussentijdsetoets</th>
+								<td>€ 199,00</td>
+
+								<th>Faalangstexamen</th>
+								<td> € 285,00</td>
+							</tr>
+							<tr>
+								<th>iTheorie</th>
+								<td> € 69,00</td>
+
+								<th>BNOR-examen</th>
+								<td> € 300,00</td>
+							</tr>
+							<tr>
+								<th>Theorie-examen</th>
+								<td> € 50,00</td>
+
+								<th>&nbsp;</th>
+								<td>&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="visible-sm visible-xs">
+						<thead>
+							<tr>
+								<th colspan="2">Losse tarieven</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Losse les (per klokuur)</th>
+								<td>€ 45,00</td>
+							</tr>
+							<tr>
+								<th>Tussentijdsetoets</th>
+								<td>€ 199,00</td>
+							</tr>
+							<tr>
+								<th>iTheorie</th>
+								<td> € 69,00</td>
+							</tr>
+							<tr>
+								<th>Theorie-examen</th>
+								<td> € 50,00</td>
+							</tr>
+							<tr>
+								<th>Herexamen</th>
+								<td> € 229,00</td>
+							</tr>
+							<tr>
+								<th>Faalangstexamen</th>
+								<td> € 285,00</td>
+							</tr>
+							<tr>
+								<th>BNOR-examen</th>
+								<td> € 300,00</td>
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row" style="text-align: center; font-size: 12px; font-style: italic">
+				Vanaf 1 november 2017 dien je zelf je
+				<a href="https://cbr.nl/ev.pp">gezondheidsverklaring</a> (voorheen eigenverklaring) aan te vragen bij het CBR.
+			</div>
+		</div>
+	</section>
+
+	<section class="actions" id='acties'>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<img src="image_resources/actie.png" />
+					<div class="action-text">
+						<h2>Tip een vriend(in)</h2>
+						<p>Krijg &euro;30,- als je een vriend of vriendin tipt en hij of zij ook bij ons komt lessen!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="profile" id='wie-zijn-wij' data-anchor="2">
+		<div class="container ">
+			<div class="row ">
+				<div class="col-sm-6 hidden-xs">
+					<img src="image_resources/ruark-van-dijken.png" />
+				</div>
+				<div class="col-sm-5 ">
+					<h1>Over ons</h1>
+					<img src="image_resources/ruark-van-dijken.png" class="hidden-sm hidden-md hidden-lg pull-right" width="40%">
+					<p>
+						Ik ben Ruark van Dijken,
+						<span id="age"></span>en sinds 2012 rij-instructeur van beroep. Mijn liefde voor auto’s en verkeer en de behoefte om te onderwijzen
+						hebben mij rij-instructeur gemaakt.
+					</p>
+					<p>
+						Van nature ben ik sociaal en houd ik van een grapje, ook ben ik erg geduldig en leg ik het graag nog eens uit als dat nodig
+						is. Ook heb ik scholing en voldoende ervaring opgedaan om kandidaten met ADHD/ADD/autisme en asperger en goede begeleiding
+						te kunnen geven.
+					</p>
+					<p>
+						Samen met mijn vrouw beheren wij onze rijschool. Ik geef de rijlessen en mijn vrouw, Lianne verzorgt de planning en de financiën.
+						Bij ons geen groot kantoor, maar persoonlijke aandacht.
+					</p>
+					<p>
+
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="working-area">
+		<span class="region ">
+			<b>Wij werken in de regio van</b> Utrecht, Gorinchem en Tiel</span>
+		<span class="cities ">
+			<b>Hieronder vallen bijvoorbeeld de plaatsen</b> Culemborg, Tiel, Zoelmond, Waardenburg, Beusichem, Schalkwijk, Houten, Lunetten,
+			Woerden, Giesenburg</span>
+		<span style="margin-top: 12px">Woon je verder weg? Geen probleem, in overleg is alles mogelijk.</span>
+	</section>
+
+	<section class="contact" id='contact' data-anchor="3">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-7"></div>
+				<div class="col-sm-5">
+					<form id="contactForm">
+						<h1>Contact</h1>
+						<input type="text" class="form-control" placeholder="Naam" name="name">
+						<input type="text" class="form-control" placeholder="Telefoon of email" name="emailOrPhone">
+						<textarea class="form-control" placeholder="Bericht" name="message" id="message"></textarea>
+
+						<button class="btn btn-default" onclick="sendMail(event);">Verzenden</button>
+						<span class="label label-warning" id='allFieldRequired'>
+							<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Vul alle velden in</span>
+						<span class="label label-success" id='mailSend'>
+							<i class="fa fa-check" aria-hidden="true"></i> Je bericht is verzonden.</span>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer data-anchor="4">
+		<p>
+			<b>&copy;
+				<script>document.writeln(new Date().getFullYear())</script> Verkeersschool Ruark van Dijken</b>
+		</p>
+		<p>
+			<nobr>
+				<i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp; info@verkeersschoolruarkvandijken.nl</nobr>&nbsp;&nbsp;&nbsp;&nbsp;
+			<nobr>
+				<i class="fa fa-phone-square" aria-hidden="true"></i>&nbsp; +31 (0)6-38731221</nobr>
+		</p>
+		<p>
+			<nobr>KvK: 55899242</nobr>&nbsp;&nbsp;&nbsp;&nbsp;
+			<nobr>IBAN: NL13 RABO 0121 375 242</nobr>
+		</p>
+		<p>
+			<a href="./Algemene Voorwaarden Verkeersschool Ruark van Dijken.pdf" target="_blank">Algemene voorwaarden</a>
+		</p>
+	</footer>
+</body>
