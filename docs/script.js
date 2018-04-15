@@ -76,7 +76,7 @@ function sendMail(event) {
         $("#allFieldRequired").show();
         return false;
     }
-    $.post("./send-mail.php", $("#contactForm").serialize())
+    $.post("http://www.verkeersschoolruarkvandijken.nl/send-mail.php", $("#contactForm").serialize())
         .done(function (data) {
             if (data == 'true') {
                 $("#mailSend").show();
@@ -94,7 +94,7 @@ function sendPhone(event) {
     if ($('#phoneNumberToSend').val().trim() === "") {
         return false;
     }
-    $.post("./send-mail.php", {
+    $.post("http://www.verkeersschoolruarkvandijken.nl/send-mail.php", {
         name: $('#phoneNumberToSend').val(),
         emailOrPhone: $('#phoneNumberToSend').val(),
         message: "Deze persoon wil graag teruggebeld worden."
