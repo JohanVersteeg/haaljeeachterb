@@ -76,7 +76,7 @@ function sendMail(event) {
         $("#allFieldRequired").show();
         return false;
     }
-    $.post("http://www.verkeersschoolruarkvandijken.nl/send-mail.php", $("#contactForm").serialize())
+    $.post("https://www.verkeersschoolruarkvandijken.nl/send-mail.php", $("#contactForm").serialize())
         .done(function (data) {
             if (data == 'true') {
                 $("#mailSend").show();
