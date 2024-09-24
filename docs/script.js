@@ -94,7 +94,7 @@ function sendPhone(event) {
     if ($('#phoneNumberToSend').val().trim() === "") {
         return false;
     }
-    $.post("http://www.verkeersschoolruarkvandijken.nl/send-mail.php", {
+    $.post("https://www.verkeersschoolruarkvandijken.nl/send-mail.php", {
         name: $('#phoneNumberToSend').val(),
         emailOrPhone: $('#phoneNumberToSend').val(),
         message: "Deze persoon wil graag teruggebeld worden."
